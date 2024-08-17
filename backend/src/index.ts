@@ -1,6 +1,7 @@
 import { Hono } from 'hono';
 import { userRouter } from './routes/user';
 import { blogRouter } from './routes/blog';
+import { cors } from 'hono/cors'
 
 
 
@@ -12,6 +13,7 @@ const app = new Hono<{   //whenever definig hone pass that specifc as generic he
 	}
 }>();
 
+app.use("/*", cors())
 app.route("api/v1/user", userRouter);
 app.route("api/v1/blog", blogRouter);	
 

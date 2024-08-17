@@ -56,7 +56,7 @@ userRouter.post('/signup', async (c) => { //context =c it holds req,res,next
   
 
 
-userRouter.post('/api/v1/signin', async (c) => {
+userRouter.post('/signin', async (c) => {
     const body = await c.req.json();
     const { success } = signinInput.safeParse(body);
     if(!success){
